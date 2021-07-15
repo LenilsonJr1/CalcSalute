@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-
-// import 'package:ola_mundo/login_page.dart';
-
 import 'home_page.dart';
 import 'ImcResult.dart';
 
@@ -14,7 +11,7 @@ class AppWidget extends StatelessWidget {
       routes: {
         '/': (context) => HomePage(),
         '/result': (context) => ImcResult(
-              ValorImc: 0,
+              ValorImc: '',
             ),
       },
     );

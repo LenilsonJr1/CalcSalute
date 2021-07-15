@@ -14,7 +14,6 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   double altura = 0;
   double peso = 0;
-  String teste = "essa merda";
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +36,6 @@ class HomePageState extends State<HomePage> {
                 keyboardType: TextInputType.number,
                 onChanged: (text) {
                   altura = double.parse(text);
-                  print(altura);
                 },
                 decoration: InputDecoration(
                     border: OutlineInputBorder(), labelText: 'Altura'),
@@ -49,7 +47,6 @@ class HomePageState extends State<HomePage> {
                 keyboardType: TextInputType.number,
                 onChanged: (text) {
                   peso = double.parse(text);
-                  print(peso);
                 },
                 decoration: InputDecoration(
                     border: OutlineInputBorder(), labelText: 'Peso'),
@@ -59,14 +56,14 @@ class HomePageState extends State<HomePage> {
               ),
               RaisedButton(
                 onPressed: () {
-                  altura = altura * altura;
-                  double ValorIMC = peso / altura;
-                  print(ValorIMC);
+                  // alturaDois = alturaDois.toStringAsExponential(1);
+                  double ValorIMC = peso / (altura * altura);
+                  String valorForm = ValorIMC.toStringAsFixed(1);
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => ImcResult(
-                                ValorImc: ValorIMC,
+                                ValorImc: valorForm,
                               )));
                 },
                 child: Text('Calcular'),
