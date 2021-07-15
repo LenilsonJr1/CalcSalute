@@ -10,8 +10,9 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  String altura = '';
-  String peso = '';
+  double altura = 0;
+  double peso = 0;
+  String teste = "essa merda";
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +24,7 @@ class HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            // img
             children: [
               SingleChildScrollView(
                 child: SizedBox(
@@ -32,7 +34,9 @@ class HomePageState extends State<HomePage> {
               TextField(
                 keyboardType: TextInputType.number,
                 onChanged: (text) {
-                  altura = text;
+                  altura = double.parse(text);
+                  print(altura);
+                  print(altura.sign);
                 },
                 decoration: InputDecoration(
                     border: OutlineInputBorder(), labelText: 'Altura'),
@@ -43,8 +47,9 @@ class HomePageState extends State<HomePage> {
               TextField(
                 keyboardType: TextInputType.number,
                 onChanged: (text) {
-                  peso = text;
+                  peso = double.parse(text);
                   print(peso);
+                  print(peso.sign);
                 },
                 decoration: InputDecoration(
                     border: OutlineInputBorder(), labelText: 'Peso'),
@@ -54,7 +59,9 @@ class HomePageState extends State<HomePage> {
               ),
               RaisedButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/result');
+                  double ValorIMC = (altura * altura) / peso;
+                  Navigator.of(context)
+                      .pushNamed('/result', arguments: ValorIMC);
                 },
                 child: Text('Calcular'),
               )
