@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'ImcResult.dart';
+
 class HomePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -36,7 +38,6 @@ class HomePageState extends State<HomePage> {
                 onChanged: (text) {
                   altura = double.parse(text);
                   print(altura);
-                  print(altura.sign);
                 },
                 decoration: InputDecoration(
                     border: OutlineInputBorder(), labelText: 'Altura'),
@@ -49,7 +50,6 @@ class HomePageState extends State<HomePage> {
                 onChanged: (text) {
                   peso = double.parse(text);
                   print(peso);
-                  print(peso.sign);
                 },
                 decoration: InputDecoration(
                     border: OutlineInputBorder(), labelText: 'Peso'),
@@ -59,9 +59,15 @@ class HomePageState extends State<HomePage> {
               ),
               RaisedButton(
                 onPressed: () {
-                  double ValorIMC = (altura * altura) / peso;
-                  Navigator.of(context)
-                      .pushNamed('/result', arguments: ValorIMC);
+                  altura = altura * altura;
+                  double ValorIMC = peso / altura;
+                  print(ValorIMC);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ImcResult(
+                                ValorImc: ValorIMC,
+                              )));
                 },
                 child: Text('Calcular'),
               )

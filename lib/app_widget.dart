@@ -13,7 +13,9 @@ class AppWidget extends StatelessWidget {
           primarySwatch: Colors.blueGrey, brightness: Brightness.dark),
       routes: {
         '/': (context) => HomePage(),
-        '/result': (context) => ImcResult(),
+        '/result': (context) => ImcResult(
+              ValorImc: 0,
+            ),
       },
     );
   }

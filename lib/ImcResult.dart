@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ImcResult extends StatelessWidget {
-  int counter = 45;
+  final double ValorImc;
+
+  const ImcResult({Key? key, required this.ValorImc}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class ImcResult extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  child: Text('Seu IMC é: arguments.ValorIMC',
+                  child: Text('Seu IMC é: $ValorImc.toStringAsExponential(1)',
                       style: TextStyle(color: Colors.white, fontSize: 20.0)),
                 )
               ],
