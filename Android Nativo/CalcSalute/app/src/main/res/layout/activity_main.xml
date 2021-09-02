@@ -4,75 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#252C51"
     tools:context=".MainActivity">
 
-
-    <EditText
-        android:id="@+id/editTextNumberDecimal2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="117dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginRight="72dp"
-        android:layout_marginBottom="254dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:selectAllOnFocus="false"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textViewAltura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="97dp"
+        android:layout_marginEnd="325dp"
+        android:layout_marginRight="325dp"
         android:text="Altura"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumber2"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumberDecimal2"
+        android:textColor="#DDCFCF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textViewPeso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="338dp"
+        android:layout_marginRight="338dp"
         android:text="Peso"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumber2"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumber2"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumber2" />
+        android:textColor="#F3DADA"
+        android:textColorHighlight="#E6DFDF"
+        android:textColorHint="#F1EEEE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlturaNumber" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginRight="72dp"
-        android:layout_marginBottom="485dp"
+        android:id="@+id/AlturaNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
         android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:inputType="numberSigned"
+        android:textColor="#DFD5D5"
+        android:textColorHighlight="#E3DEDE"
+        android:textColorHint="#E6DFDF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAltura" />
+
+    <EditText
+        android:id="@+id/PesoNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:textColor="#F4F1F1"
+        android:textColorHighlight="#ECE4E4"
+        android:textColorHint="#ECE8E8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPeso" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="320dp"
-        android:text="Calcular!"
-        app:backgroundTint="#405b7a"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="139dp"
+        android:layout_marginLeft="139dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginRight="150dp"
+        android:text="Calcular!!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal2" />
-
+        app:layout_constraintTop_toBottomOf="@+id/PesoNumber" />
 </androidx.constraintlayout.widget.ConstraintLayout>
